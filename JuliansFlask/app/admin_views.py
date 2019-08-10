@@ -10,4 +10,4 @@ def admin_dashboard():
 
 @app.route('/admin/profile')
 def admin_profile():
-    return '<h3>Admin profile</h3>'
+    return "Admin Profile"
