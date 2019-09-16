@@ -1,13 +1,14 @@
-from flask import render_template
 from app import app
+from flask import render_template
 
 
 
 
-@app.route('/admin/dashboard')
+@app.route("/admin/dashboard")
 def admin_dashboard():
-    return render_template('admin/dashboard.html')
+    return render_template('admin/dashboard.html') 
 
-@app.route('/admin/profile')
+
+@app.route("/admin/profile")
 def admin_profile():
-    return "Admin Profile"
+    return "<h3 style='color :orange'>All info about myself</h3>"
