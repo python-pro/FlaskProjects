@@ -11,8 +11,10 @@ def index():
 @app.route("/jinja")
 def jinja():
 
-	my_name="AbdulMalik"
+	def repeat(x, qty=1):
+		return x * qty
 
+	my_name="AbdulMalik"
 
 	# Integers
 	my_age = 30
@@ -20,43 +22,43 @@ def jinja():
 	# Lists
 	langs = ["Python", "JavaScript", "Golang", "Java", "C++", "Rust"]
 
-	# Dictionaries
-    friends = {"Tony": 43,"Cody": 28,"Amy": 26,"Clarissa": 23,"Wendell": 39}
+	cool = True
+	colors = ("Red", "Blue")
+	friends = {"Tony": 43,"Cody": 28,"Amy": 26,"Clarissa": 23,"Wendell": 39}
+	
+    
+        
+
 
 	
-    # Tuples
-    colors = ("Red", "Blue")
 
-    # Booleans
-    cool = True
+	
 
-    # Classes
-    class GitRemote:
-        def __init__(self, name, description, domain):
-            self.name = name
-            self.description = description 
-            self.domain = domain
 
-        def pull(self):
-            return f"Pulling repo '{self.name}'"
+	# class GitRemote:
+	# 	def __init__(self, name, description, domain):
+	# 		self.domain = domain
+	# 		self.description = description
+	# 		self.name = name
 
-        def clone(self, repo):
-            return f"Cloning into {repo}"
+	# 	def clone(self, repo):
+ #            return f"Cloning into {repo}"
+		
+	# 	def pull(self):
+	# 		return f"Pulling repo '{self.name}'"     	      
+         
+                   
 
-    my_remote = GitRemote(
-        name="Learning Flask",
-        description="Learn the Flask web framework for Python",
-        domain="https://github.com/Julian-Nash/learning-flask.git"
-    )
+ #    my_remote = GitRemote(
+ #        name="Learning Flask",
+ #        description="Learn the Flask web framework for Python",
+ #        domain="https://github.com/Julian-Nash/learning-flask.git"
+ #    )
 
-    # Functions
-    def repeat(x, qty=1):
-        return x * qty
 
 
 	return render_template("public/jinja.html",name=my_name,my_age=my_age, langs=langs,
-    friends=friends, colors=colors, cool=cool, GitRemote=GitRemote, 
-    my_remote=my_remote, repeat=repeat)
+    repeat=repeat, friends=friends, colors=colors, cool=cool)
 
 	
 
