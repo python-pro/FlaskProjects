@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+	<title>title_page</title>
 </head>
 <body>
 	<h1 style="color: blue">Index</h1>
   	<p>This is an HTML file served up by Flask</p>
+  	<img style="width:1000px;" src="{{ url_for('static', filename='image/flask.jpg') }}">
+  	<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 </html>
