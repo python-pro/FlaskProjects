@@ -139,3 +139,21 @@ def json():
 
 	else:
 		return make_response(jsonify({"message":"Was not be able to get proper response from python"}),400)
+
+
+@app.route("/guestbook")
+def guestbook():
+    return render_template("public/guestbook.html")
+
+
+
+@app.route("/guestbook/create-entry", methods=["POST"])
+def create_entry():
+
+    request.get_json()
+
+    print(request.get_json())
+
+    res = make_response(jsonify(request.get_json()), 200)
+
+    return res
