@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,request,redirect
+from flask import render_template,request,redirect,jsonify,make_response
 from datetime import datetime
 
 
@@ -128,5 +128,14 @@ def profile(username):
 
 	
 
-    
-    
+@app.route("/json", methods=["POST"])
+def json():
+	if request.is_json:
+		request.get_json()
+		resp = {
+            "message": "JSON received from Python Langueage!",
+            "sender": request.get_json()["name"]       }
+		return make_response(jsonify(resp),200)
+
+	else:
+		return make_response(jsonify({"message":"Was not be able to get proper response from python"}),400)
