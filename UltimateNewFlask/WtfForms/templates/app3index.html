@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App3 Page</title>
+</head>
+<body>
+	<h1>The third application form is below</h1>
+	<form action="/index" method="POST">
+	{{form.csrf_token}}
+	
+	{{form.username.label}}
+	{{form.username}}
+
+	{{form.password.label}}
+	{{form.password}}
+
+	
+	<input type="submit" value="Submit Form">
+	</form>
+
+</body>
+</html>

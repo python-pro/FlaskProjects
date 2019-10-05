@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Page</title>
+</head>
+<body>
+	<h1>The form is below</h1>
+	<form action="/app2form" method="POST">
+	{{form.csrf_token}}
+	
+	{{form.username.label}}
+	{{form.username}}
+
+	{{form.password.label}}
+	{{form.password}}
+
+	{{form.recaptcha}}
+	{%for error in form.recaptcha.errors%}
+	<ul>
+		<li style="color:blue;">{{error}}</li>
+	</ul>
+	{%endfor%}
+	<input type="submit" value="Submit Form">
+	</form>
+
+</body>
+</html>

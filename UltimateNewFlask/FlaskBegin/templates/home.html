@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{%block title%}Homepage{%endblock%}
+
+
+
+{%block content%}
+{{super()}}
+<h2>Peace be upon you {{name}}. <br> You are on the home page</h2>
+
+<h1>Database Results</h1>
+{%for item in results%}
+<h2>ID: {{item.id}}, Name: {{item.name}}, Location: {{item.location}} </h2>
+{%endfor%}
+
+
+{%if display%}
+<h3><del>Display attribute is being triggered</del></h3>
+{%else%}
+<h3>Display attribute is NOT being triggered</h3>
+{%endif%}
+
+<h3><mark>Have to constantly and tiredlessly work on my:</mark> </h3>
+{%for item in myList%}
+<h4 style="color:blue";>{{item}}</h4>
+{%endfor%}
+<hr>
+
+<h3><mark>Need exceedingly practice on:</mark> </h3>
+{%for i in activityType%}
+<h4 style="color:green";><ins>{{i.task}}</ins></h4>
+{%endfor%}
+
+<img src="{{url_for('static',filename='flask.jpeg')}}">
+{% include "include_this.html"%}
+{%endblock%}

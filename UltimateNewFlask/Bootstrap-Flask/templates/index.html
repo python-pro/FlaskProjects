@@ -1,0 +1,15 @@
+{% extends "bootstrap/base.html" %}
+{%block content%}
+<h1>This is inside content block</h1>
+<p>Still inside the block</p>
+{%endblock%}
+
+{%block title%}
+Flask-Bootstrap Example
+{%endblock%}
+
+
+{%block scripts%}
+<script type="script.js"></script>
+{{super()}}
+{%endblock%}
