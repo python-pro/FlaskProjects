@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 
 
 
@@ -11,6 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site2.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
 db=SQLAlchemy(app)
+bcrypt=Bcrypt(app)
 
 
 from flaskblog import routes
