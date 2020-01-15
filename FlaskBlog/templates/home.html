@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+{%extends "layout.html"%}
+
+{% block content %}
+<h1>Assalaam aleykom</h1>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+{%for post in posts%}
+    <h2>{{post.title}}</h2>
+    <h3>By: {{post.author}} on {{post.posted_date}}</h3>
+    <p>{{post.content}}</p>
+{%endfor%}
+{%endblock content%}
     
-
-</head>
-<body>
-
-    <h1>Assalaam aleykom</h1>
-
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-
-    {%for post in pps%}
-        <h2>{{post.title}}</h2>
-        <h3>By: {{post.author}} on {{post.posted_date}}</h3>
-        <p>{{post.content}}</p>
-    {%endfor%}
-    
-
-    
-</body>
-</html>

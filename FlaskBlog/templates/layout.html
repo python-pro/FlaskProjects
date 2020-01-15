@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+
+    {%if title%}
+        <title>FlaskBlog - {{title}}</title>
+    {%else%}
+        <title>FlaskBlog</title>
+    {%endif%}
+    
+</head>
+<body>
+
+    <div class="container">
+            {%block content%}{%endblock content%}    
+    </div>
+
+    
+</body>
+</html>
