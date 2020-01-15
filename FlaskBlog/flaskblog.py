@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask, render_template
 
 app=Flask(__name__)
 
@@ -47,13 +47,13 @@ posts=[
 @app.route("/")
 @app.route("/home")
 def index():
-    return render_template("home.html", posts=posts)
+    return render_template("home.html", pps=posts)
 
 
 
 @app.route("/about")
 def about():
-    return "<h1>This is home page <h1>"
+    return render_template("about.html",title="About")
 
 
 if __name__=="__main__":
